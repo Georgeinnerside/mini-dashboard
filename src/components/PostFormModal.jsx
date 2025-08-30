@@ -34,15 +34,17 @@ export default function PostFormModal({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl w-96">
-        <h2 className="text-lg font-bold mb-4">Post Form</h2>
+      <div className="text-gray-800 bg-white  dark:bg-gray-800 p-6 rounded-xl w-96">
+        <h2 className="text-gray-700 dark:text-gray-200 text-lg font-bold mb-4">
+          Post Form
+        </h2>
 
         <form onSubmit={handleSubmit(submitHandler)} className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Title</label>
             <input
               {...register("title")}
-              className="w-full border rounded p-2"
+              className="text-gray-700 dark:text-gray-200 w-full border rounded p-2"
               placeholder="Enter title"
             />
             {errors.title && (
@@ -54,7 +56,7 @@ export default function PostFormModal({
             <label className="block text-sm font-medium">Body</label>
             <textarea
               {...register("body")}
-              className="w-full border rounded p-2 h-[60%]"
+              className="text-gray-700 dark:text-gray-200 w-full border rounded p-2 h-[60%]"
               placeholder="Enter body"
             />
             {errors.body && (
@@ -66,7 +68,7 @@ export default function PostFormModal({
             <button
               type="button"
               onClick={isClose}
-              className="px-4 py-2 bg-gray-500 text-white rounded"
+              className="text-gray-200 dark:text-gray-200 px-4 py-2 bg-gray-500  rounded"
             >
               Cancel
             </button>
