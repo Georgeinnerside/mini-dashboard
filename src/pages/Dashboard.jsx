@@ -105,7 +105,9 @@ const Dashboard = () => {
         {error && <p>Error...</p>}
         {isLoading && (
           <div className="flex items-center justify-center h-screen">
-            <p className="text-2xl text-center">Loading...</p>
+            <p className="text-gray-800 text-2xl text-center dark:text-gray-200">
+              Loading...
+            </p>
           </div>
         )}
 
