@@ -14,7 +14,7 @@ const EditPostModal = ({
         }}
         className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 max-w-md"
       >
-        <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        <h2 className="text-xl text-gray-800 font-bold mb-4   dark:text-gray-100">
           Edit Post
         </h2>
 
@@ -25,11 +25,12 @@ const EditPostModal = ({
             setSelectedPost({ ...selectedPost, title: e.target.value })
           }
           placeholder="Title"
-          className="border border-gray-300 dark:border-gray-600 p-2 w-full rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 p-2 w-full rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
         {/* text area for post content */}
+
         <textarea
           value={selectedPost.body || ""}
           onChange={(e) =>
@@ -37,7 +38,7 @@ const EditPostModal = ({
           }
           placeholder="Body"
           rows={5}
-          className="border border-gray-300 dark:border-gray-600 p-2 w-full rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 p-2 w-full rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 

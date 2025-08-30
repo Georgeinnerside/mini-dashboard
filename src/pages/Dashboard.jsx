@@ -112,7 +112,7 @@ const Dashboard = () => {
         )}
 
         {/* motion div for smooth card transition */}
-        <div className="flex flex-col w-full md:w-4/5 mx-auto">
+        <div className="flex flex-col w-full mx-auto">
           <motion.div
             key={page}
             initial={{ opacity: 0 }}
