@@ -112,47 +112,49 @@ const Dashboard = () => {
         )}
 
         {/* motion div for smooth card transition */}
-        <motion.div
-          key={page}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {currentPosts.map((post) => (
-            <PostCard
-              key={post.id}
-              post={post}
-              onEdit={() => editActions(post)}
-              onDelete={() => deleteAction(post.id)}
-              onView={() => openDetailModal(post)}
-            />
-          ))}
-        </motion.div>
+        <div className="flex flex-col w-full md:w-4/5 mx-auto">
+          <motion.div
+            key={page}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {currentPosts.map((post) => (
+              <PostCard
+                key={post.id}
+                post={post}
+                onEdit={() => editActions(post)}
+                onDelete={() => deleteAction(post.id)}
+                onView={() => openDetailModal(post)}
+              />
+            ))}
+          </motion.div>
 
-        {/* pagination arrows and buttons */}
-        {postsToPaginate.length > 0 && (
-          <div className="flex justify-center items-center gap-4 mt-6 mb-6">
-            <button
-              onClick={prevPage}
-              disabled={page === 1}
-              className="text-gray-800 dark:text-gray-200 bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded  disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft />
-            </button>
-            <span className="text-gray-700 dark:text-gray-200 cursor-pointer mt-3">
-              Page {page} of {totalPages}
-            </span>
-            <button
-              onClick={nextPage}
-              disabled={page === totalPages}
-              className="text-gray-800 dark:text-gray-200  bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        )}
+          {/* pagination arrows and buttons */}
+          {postsToPaginate.length > 0 && (
+            <div className="flex justify-center items-center gap-4 mt-6 mb-6">
+              <button
+                onClick={prevPage}
+                disabled={page === 1}
+                className="text-gray-800 dark:text-gray-200 bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded  disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronLeft />
+              </button>
+              <span className="text-gray-700 dark:text-gray-200 cursor-pointer mt-3">
+                Page {page} of {totalPages}
+              </span>
+              <button
+                onClick={nextPage}
+                disabled={page === totalPages}
+                className="text-gray-800 dark:text-gray-200  bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* modal for creatig a post */}
         {isAddOpen && (
