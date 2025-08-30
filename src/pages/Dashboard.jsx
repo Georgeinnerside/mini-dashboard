@@ -78,7 +78,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex flex-col h-screen p-6 bg-gray-200 dark:bg-gray-950 overflow-y-auto">
+      <div className="flex flex-col h-screen  p-6 bg-gray-200 dark:bg-gray-950 overflow-y-auto">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
           Dashboard Overview
         </h1>
@@ -133,11 +133,11 @@ const Dashboard = () => {
 
         {/* pagination arrows and buttons */}
         {postsToPaginate.length > 0 && (
-          <div className="flex justify-center fixed bottom-0 left-0 w-full gap-4 mt-6 mb-6">
+          <div className="flex justify-center items-center gap-4 mt-6 mb-6">
             <button
               onClick={prevPage}
               disabled={page === 1}
-              className="px-4 py-2 bg-gray-300 dark:bg-gray-700 rounded"
+              className="text-gray-800 dark:text-gray-200 bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded  disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <ChevronLeft />
             </button>
@@ -147,7 +147,7 @@ const Dashboard = () => {
             <button
               onClick={nextPage}
               disabled={page === totalPages}
-              className="px-4 py-2 bg-gray-300 dark:bg-gray-700 rounded cursor-pointer"
+              className="text-gray-800 dark:text-gray-200  bg-gray-300  dark:bg-gray-700 px-4 py-2 rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <ChevronRight />
             </button>
